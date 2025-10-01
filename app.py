@@ -5,7 +5,7 @@ import requests
 
 def fetch_poster(movie_id):
     try:
-        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=7824c388dbf7f1fbb7a08c390810f4c5&language=en-US"
+        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={st.secrets['7824c388dbf7f1fbb7a08c390810f4c5']}&language=en-US"
         response = requests.get(url, timeout=5)  # timeout added
         response.raise_for_status()  # raise error if not 200
         data = response.json()
